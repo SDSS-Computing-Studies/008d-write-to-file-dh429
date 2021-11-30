@@ -21,7 +21,7 @@ Today we will be reading and writing data from files.  There are many ways to re
 * You can read a whole file into a single variable
 * You can read a file one line at a time, and store each line as an element of a list
 
-### 2 Tasks
+### 3 Tasks
 
 ##### Task 1
 Have the user enter in their name and email address.

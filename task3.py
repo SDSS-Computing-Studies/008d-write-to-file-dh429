@@ -1,4 +1,5 @@
 #!python3
+import json
 
 '''
 Ask the user to enter in a list of 5 words.
@@ -16,3 +17,19 @@ task3.txt contents:
 ["frog","french","puppy","escalate","ice"]
 
 '''
+filename = 'task3.txt'
+file = open(filename,'w')
+
+wlist = []
+
+for i in range(5):
+    word = input("Enter a word: ")
+    wlist.append(word)
+
+WriteData = json.dumps(wlist)
+file.write(f"{WriteData}")
+
+#inputData = None
+#while inputData != "":
+    #inputData = input("Enter something to write")
+    #file.write(inputData + "\n")
