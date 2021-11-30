@@ -28,8 +28,3 @@ for i in range(5):
 
 WriteData = json.dumps(wlist)
 file.write(f"{WriteData}")
-
-#inputData = None
-#while inputData != "":
-    #inputData = input("Enter something to write")
-    #file.write(inputData + "\n")
