@@ -4,10 +4,13 @@ import json
 x = 10
 y = 3
 z = ['Hello','world']
+ad = ['test']
 outputData = json.dumps(z)
+outputData = json.dumps(ad)
 
 print(type(z))
 print(type(outputData))
+print(outputData)
 
 file = open('example2.txt','w')
 file.write(f"{outputData}")
