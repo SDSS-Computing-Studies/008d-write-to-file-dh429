@@ -8,6 +8,8 @@ Write a program to keep track of your current grades for 8 subjects.  Create a m
 3. Read data from a file
 4. Save the current data to a file.
 
+["Intro Spanish", "87", "Drafting", "100", "New Media", "83", "Computer Science", "100", "Psychology", "85", "Pre-Calculus", "79", "Law Studies", "84", "Biology", "90"]
+
 """
 
 FName = "problem2.txt"
@@ -71,6 +73,9 @@ def menu():
         if Choice == "4":
             FName = "problem2.txt"
             File = open(FName, 'w')
-            File.write(DList)
-            exit()
+            OutputData = json.dumps(DList)
+            File.write(f"{OutputData}")
+            File.close()
+            break
+            
 menu()
