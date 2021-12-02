@@ -34,36 +34,43 @@ def menu():
         print("[1] Change the name of a subject")
         print("[2] Change the value of a grade")
         print("[3] Reset any changes made")
-        print("[4]Save the current data to a file")
+        print("[4] Save the current data to a file")
         Choice = input("Enter in a selection: ")
 
         if Choice == "1":
             Running = True
             while Running:
-                Found = False
+                Found = 0
                 SubChange = input("What subject would you like to change?: ")
                 for i in range(len(DList)):
                     if SubChange in DList[i]:
-                        Found = True
-                        Change = input("What would you like to change it to?: ")
-                        DList[i] = Change
-                        Running = False
-                if Found != True:
+                        Found = Found + 1
+                        ListSlot = i
+                if Found == 0:
                     print("That subject does not exist")
+                if Found == 1:
+                    Change = input("What would you like to change it to?: ")
+                    DList[ListSlot] = Change
+                    Running = False
+                if Found > 1:
+                    print("They're are multiple results with that search, please be more specific")
         if Choice == "2":
             Running = True
             while Running:
-                Found = False
+                Found = 0
                 GradeChange = input("What subject grade would you like to change?:")
                 for i in range(len(DList)):
                     if GradeChange in DList[i]:
-                        Found = True
-                        Change = input("What will be the new grade?: ")
-                        DList[i + 1] = Change
-                        Running = False
-                if Found != True:
+                        Found = Found + 1
+                        ListSlot = i + 1
+                if Found == 0:
                     print("That subject does not exist")
-
+                if Found == 1:
+                    Change = input("What will be the new grade?: ")
+                    DList[ListSlot] = Change
+                    Running = False
+                if Found > 1:
+                    print("They're are multiple results with that search, please be more specific")
         if Choice == "3":
             FName = "problem2.txt"
             File = open(FName, 'r')
